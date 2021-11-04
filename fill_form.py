@@ -8,7 +8,7 @@ signin_button = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]/div[3
 signin_button.click()
 
 time.sleep(1)
-email = "nwaomonoh.onyebuchi@lmu.edu.ng"
+email = "*****" #fill in your email address in place of the "*"
 verify_email = driver.find_element_by_xpath('//*[@id="identifierId"]')
 verify_email.send_keys(email)
 
@@ -16,7 +16,7 @@ submit_email = driver.find_element_by_xpath('//*[@id="identifierNext"]/div/butto
 submit_email.click()
 
 time.sleep(2)
-password = "water"
+password = "****" #fill in your password for your email  in place of the "*"
 enter_pass = driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
 enter_pass.send_keys(password)
 
@@ -25,11 +25,11 @@ pass_click.click()
 
 time.sleep(4)
 
-firstname = "Onyebuchi"
+firstname = "****" #fill in your firstname in place of the "*"
 first = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
 first.send_keys(firstname)
 
-lastname = "Nwaomonoh"
+lastname = "***" #fill in your last name in place of the "*"
 first = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/input')
 first.send_keys(lastname)
 
@@ -37,7 +37,6 @@ age = 23
 first = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[1]/input')
 first.send_keys(age)
 
-# email = "karennwaomonoh@gmail.com"
 first = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[1]/input')
 first.send_keys(email)
 
