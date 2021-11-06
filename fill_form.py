@@ -16,7 +16,7 @@ submit_email = driver.find_element_by_xpath('//*[@id="identifierNext"]/div/butto
 submit_email.click()
 
 time.sleep(2)
-password = "****" #fill in your password for your email  in place of the "*"
+password = "***" #fill in your password for your email  in place of the "*"
 enter_pass = driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
 enter_pass.send_keys(password)
 
@@ -25,7 +25,7 @@ pass_click.click()
 
 time.sleep(4)
 
-firstname = "****" #fill in your firstname in place of the "*"
+firstname = "***" #fill in your firstname in place of the "*"
 first = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
 first.send_keys(firstname)
 
