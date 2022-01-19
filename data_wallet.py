@@ -1,12 +1,16 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import pandas as pd
+
 df = pd.read_csv("../Database.csv", header=0)
 a = len(df["Email Address"])
 while True:
     counter = 0
     for index in range(a):
-        b = df.iloc[index, :]
+        b = df.iloc[index,:]
         email = b["Email Address"]
         firstname = b["First name"]
         lastname = b["Last Name"]
@@ -15,8 +19,10 @@ while True:
         driver = webdriver.Chrome("../chromedriver2.exe") #this should be leading to the path of the chrome driver on your device
         form = driver.get("https://docs.google.com/forms/d/e/1FAIpQLSf199CGgRmkviKgL6hgWurjI65VKP2mS55eS6QQn2UjQJrEkA/viewform?usp=sf_link")
 
-        time.sleep(4)
-
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')))#this makes the program until the element by the stated Xpath has been found for a max of 10 seconds
+        except: break
         firstname_column = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
         firstname_column.send_keys(firstname)
 
@@ -48,4 +54,5 @@ while True:
             print("Not successful")
 
     break
+
 
